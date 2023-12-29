@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
+      - docker build -t $REPOSITORY_URI:latest
       - docker tag projeto-lab:latest 075630081423.dkr.ecr.us-east-1.amazonaws.com/projeto-lab:latest
   post_build:
     commands:
