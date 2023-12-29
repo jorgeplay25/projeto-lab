@@ -1,7 +1,8 @@
 FROM centos:8
-MAINTAINER Ian Agpawa<agpawaji@gmail.com>
+LABEL maintainer "leandro"
 RUN yum update -y
-RUN yum install httpd -y
+RUN yum -y install httpd
+RUN yum -y install php
 CMD /usr/sbin/httpd -D FOREGROUND
 WORKDIR /var/www/html
 COPY index.html /var/www/html/
