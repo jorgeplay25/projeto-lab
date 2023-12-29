@@ -1,6 +1,6 @@
 FROM centos:8
 LABEL maintainer "leandro"
-RUN yum update httpd
+RUN yum update
 RUN yum install httpd
 RUN yum install php -y
 CMD /usr/sbin/httpd -D FOREGROUND
