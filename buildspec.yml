@@ -14,13 +14,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest
+      - docker build -t projeto-lab .
       - docker tag projeto-lab:latest 075630081423.dkr.ecr.us-east-1.amazonaws.com/projeto-lab:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
+      - docker push 075630081423.dkr.ecr.us-east-1.amazonaws.com/projeto-lab:latest
       - echo Writing image definitions file...
       - printf '[{"name":"devops","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
       - cat imagedefinitions.json
