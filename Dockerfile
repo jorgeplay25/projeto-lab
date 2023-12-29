@@ -6,3 +6,4 @@ CMD /usr/sbin/httpd -D FOREGROUND
 WORKDIR /var/www/html
 COPY index.html /var/www/html/
 ENTRYPOINT ["/usr/sbin/httpd","-D","FOREGROUND"]
+EXPOSE 80
