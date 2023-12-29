@@ -1,8 +1,7 @@
 FROM centos:8
 LABEL maintainer "leandro"
-RUN yum update -y
-RUN yum -y install httpd
-RUN yum -y install php
+RUN yum install httpd -y
+RUN yum install php -y
 CMD /usr/sbin/httpd -D FOREGROUND
 WORKDIR /var/www/html
 COPY index.html /var/www/html/
